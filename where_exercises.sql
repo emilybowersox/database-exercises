@@ -17,6 +17,7 @@ where last_name like 'e%';
 select *
 from employees
 where hire_date like '199%';
+-- can also use between but have to put dates in strings ''
 
 # Find all employees born on Christmas — 842 rows.
 select *
@@ -58,8 +59,7 @@ where hire_date like '199%'
 and birth_date like '%12-25';
 
 # Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
--- ??
 select *
 from employees
 where last_name like '%q%'
-and last_name like '%qu%';
+and last_name not like '%qu%';
