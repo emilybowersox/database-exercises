@@ -11,11 +11,19 @@ from employees
 where last_name like 'e%';
 -- '%e%' means contains 'e'
 -- wheras 'e%' means starts with
+-- and '%e' means ends with
 
 # Find all employees hired in the 90s — 135,214 rows.
-
+select *
+from employees
+where hire_date like '199%';
 
 # Find all employees born on Christmas — 842 rows.
-
+select *
+from employees
+where birth_date like '%12-25';
 
 # Find all employees with a 'q' in their last name — 1,873 rows.
+select *
+from employees
+where last_name like '%q%';
