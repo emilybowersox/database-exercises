@@ -14,3 +14,4 @@ where hire_date like '199%'
 order by birth_date, hire_date DESC
 limit 5 offset 45;
 -- 45 = 9 * 5
+-- page # = (limit + offset)/limit
