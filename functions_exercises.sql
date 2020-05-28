@@ -64,11 +64,11 @@ where last_name like 'E%'
 -- use datediff() to find how many days they have been working at the company
 -- (Hint: You will also need to use now() or curdate())
 
-select *
+select *, datediff(curdate(), hire_date) as days_employeed
 from employees
 where hire_date like '199%'
   and birth_date like '%12-25'
-order by birth_date, hire_date DESC;
+order by hire_date desc;
 
 # Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
 select *
