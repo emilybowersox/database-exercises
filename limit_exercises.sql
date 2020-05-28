@@ -13,4 +13,4 @@ where hire_date like '199%'
   and birth_date like '%12-25'
 order by birth_date, hire_date DESC
 limit 5 offset 45;
-
+-- 45 = 9 * 5
