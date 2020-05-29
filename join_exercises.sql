@@ -54,6 +54,5 @@ from departments as d
 
 
 
-
 # Bonus Find the names of all current employees,
 # their department name, and their current manager's name.
