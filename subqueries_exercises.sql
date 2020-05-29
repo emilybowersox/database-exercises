@@ -21,14 +21,19 @@ where emp_no in (
     select emp_no
     from employees
     where first_name = 'Aamod'
-    )
--- add 'distinct' for unqiue titles
-
-
-
+    );
+-- add 'distinct' for unique titles
 
 
 # Find all the current department managers that are female.
+select first_name, last_name
+from employees
+where gender = "F"
+and emp_no in (
+    select emp_no
+    from dept_manager
+    where to_date > now()
+    );
 
 
 
