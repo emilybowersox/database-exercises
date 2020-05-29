@@ -23,6 +23,17 @@ from departments as d
 
 # Find the current titles of employees currently working
 # in the Customer Service department.
+select title, count(title) as count
+#      , count(title) as number_of_employees
+from titles as t
+join dept_emp as de
+    on de.emp_no = t.emp_no
+join departments as d
+     on d.dept_no = de.dept_no
+    where d.dept_no = 'd009'
+    and de.to_date = '9999-01-01'
+    and t.to_date = '9999-01-01'
+    group by title;
 
 
 
