@@ -15,6 +15,16 @@ where hire_date in (
 
 # Find all the titles held by all employees with the first name Aamod.
 # (314 total titles, 6 unique titles)
+select title
+from titles
+where emp_no in (
+    select emp_no
+    from employees
+    where first_name = 'Aamod'
+    )
+-- add 'distinct' for unqiue titles
+
+
 
 
 
