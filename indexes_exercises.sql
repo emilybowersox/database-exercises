@@ -15,6 +15,8 @@ from dept_emp;
 describe dept_manager;
 -- pks: dept_no and emp_no
 describe salaries;
+select *
+from salaries;
 -- primary keys: emp_no and from_date
 describe titles;
 select *

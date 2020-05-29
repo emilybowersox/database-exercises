@@ -24,7 +24,6 @@ from departments as d
 # Find the current titles of employees currently working
 # in the Customer Service department.
 select title, count(title) as count
-#      , count(title) as number_of_employees
 from titles as t
 join dept_emp as de
     on de.emp_no = t.emp_no
@@ -34,11 +33,24 @@ join departments as d
     and de.to_date = '9999-01-01'
     and t.to_date = '9999-01-01'
     group by title;
-
+-- have to do to_date of both title and department employee - cause they
+-- could have had that title in another department, or been in that department
+-- with a non-current title
 
 
 # Find the current salary of all current managers.
-
+select d.dept_name, concat(e.first_name, ' ', e.last_name) as department_manager,
+       s.salary
+from departments as d
+         join dept_manager as dm
+              on dm.dept_no = d.dept_no
+         join employees as e
+              on e.emp_no = dm.emp_no
+        join salaries as s
+                on s.emp_no = e.emp_no
+    where dm.to_date = '9999-01-01'
+    and s.to_date = '9999-01-01'
+    order by dept_name;
 
 
 
