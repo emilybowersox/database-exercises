@@ -39,7 +39,6 @@ and emp_no in (
 
 
 
-
 # BONUS
 # Find all the department names that currently have female managers.
 
