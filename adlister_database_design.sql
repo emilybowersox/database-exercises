@@ -12,9 +12,9 @@ from users as u
 
 select category
 from categories as c
-    inner join ad_category as ac
+    join ad_category as ac
     on ac.category_id = c.category.id
-    inner join ads as a
+    join ads as a
     on ac.ad_id = a.ad_id
     where ad_id = [ad you're searching for'];
 
@@ -22,10 +22,16 @@ from categories as c
 
 select title
 from ads as a
-    inner join ad_category as ac
+    join ad_category as ac
     on ac.ad_id = a.ad_id
-    inner join categories as c
+    join categories as c
     on c.category_id = ac.categroy_id
     where c.catergory = [category you're searching for'];
 
 # For a given user, show all the ads they have posted.
+
+select title
+from ads as a
+    join users as u
+    on u.user_id = a.creator_id
+    where u.user_id = [user you're searching for'];
