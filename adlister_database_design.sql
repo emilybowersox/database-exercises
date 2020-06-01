@@ -5,7 +5,7 @@
 select user_email
 from users as u
     join ads as a
-    on a.ad_creator = u.user_id
+    on a.user_id = u.user_id
     where ad_id = [ad you're searching for'];
 
 # For a given ad, what category, or categories, does it belong to?
@@ -33,5 +33,5 @@ from ads as a
 select title
 from ads as a
     join users as u
-    on u.user_id = a.creator_id
+    on u.user_id = a.user_id
     where u.user_id = [user you're searching for'];
